@@ -1,0 +1,24 @@
+<h1 align="center">New homepage</h1>
+<div class="row"><p>This is my test simple_form_for with bootstrap 3 validation</p></div>
+
+<%= simple_form_for(@user, html: { class: 'form-horizontal' }) do |f| %>
+
+  <%= f.input :email, placeholder: 'Enter email' %>
+
+  <%= f.input :password, placeholder: 'Password' %>
+
+  <%= f.input :file, as: :file, wrapper: :vertical_file_input %>
+
+  <%= f.input :active, wrapper: :vertical_boolean %>
+
+  <%= f.input :choices, as: :check_boxes,
+    collection: [
+      'Option one is this and that—be sure to include why it\'s great',
+      'Option two can be something else and selecting it will deselect option one'],
+      wrapper: :vertical_radio_and_checkboxes %>
+
+  <%= f.input :sex, as: :radio_buttons,
+    collection: ['Male', 'Female'], wrapper: :vertical_radio_and_checkboxes %>
+
+  <%= f.button :submit %>
+<% end %>
